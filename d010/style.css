@@ -1,16 +1,16 @@
 @charset "UTF-8";
 @font-face {
     font-family: 'idroid';
-    src: url('fontes/idroid.otf') format(opentype);
+    src: url('fontes/idroid.otf') format('opentype');
 }
 @font-face {
     font-family: 'Mango Grotesque';
-    src: url('fontes/Mango Grotesque-VF.ttf') format(truetype);
+    src: url('fontes/Mango Grotesque-VF.ttf') format('truetype');
 }
+
 *{
     --android-light: #84e1ad;
     --android-dark: #1A5C38;
-
 }
 
 body{
@@ -21,9 +21,9 @@ body{
 
 header{
     background-image: linear-gradient(to top, var(--android-dark), var(--android-light));
-    
     padding: 1em;
     color: white;
+    text-shadow: 1px 1px 3px var(--android-dark);
 }
 
 div#title{
@@ -34,9 +34,24 @@ div#title{
 
 /* direct children */
 div#title > h1{
-    font-family: 'Mango Grotesque';
-    font-weight: 400;
-    font-size: 2.5em;
+    font-family: 'Mango Grotesque', 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    font-size: 3em;
+    color: white;
+}
+
+#subtitle{
+    text-align: center;
+}
+
+h1,h2{
+    font-family: 'idroid', 'Mango Grotesque',sans-serif;
+    color: var(--android-dark);
+}
+
+h2{
+    background-image: linear-gradient(to right, var(--android-light), rgba(255, 255, 255, 0));
+    padding-left: 0.3em;
 }
 
 nav{
@@ -50,4 +65,72 @@ nav > a{
     color: white;
     text-decoration: none;
     padding-right: 1em;
+}
+
+nav > a::after{
+    content: '';
+}
+
+main{
+    background-color: white;
+    margin: auto;
+    margin-bottom: 1em;
+    border-radius: 0px 0px 10px 10px;
+    padding: 1em;
+    width: 90%;
+}
+
+p{
+    text-align: justify;
+    text-indent: 1em;
+}
+
+footer{
+    background-color: var(--android-dark);
+    color: white;
+    text-align: center;
+    font-size: small;
+    width: 100%;
+    padding: 0.5em;
+}
+
+section{
+    background-color: #c5ebd6;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+#versions-title{
+    background-color: var(--android-dark);
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    /* padding no subtitlo */
+}
+
+li::before{
+    content: '✔️ ';
+}
+
+a{
+    font-weight: bold;
+    color: var(--android-dark);
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a::after{
+    content: ' 🔗';
+}
+
+b{
+    color: var(--android-dark);
+}
+
+ul{
+    width: max-content;
+    background-color: pink;
 }
