@@ -1,0 +1,53 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'idroid';
+    src: url('fontes/idroid.otf') format(opentype);
+}
+@font-face {
+    font-family: 'Mango Grotesque';
+    src: url('fontes/Mango Grotesque-VF.ttf') format(truetype);
+}
+*{
+    --android-light: #84e1ad;
+    --android-dark: #1A5C38;
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--android-light);
+    margin: 0px;
+}
+
+header{
+    background-image: linear-gradient(to top, var(--android-dark), var(--android-light));
+    
+    padding: 1em;
+    color: white;
+}
+
+div#title{
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+/* direct children */
+div#title > h1{
+    font-family: 'Mango Grotesque';
+    font-weight: 400;
+    font-size: 2.5em;
+}
+
+nav{
+    border-right: 10em;
+    margin-right: 2em;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+nav > a{
+    color: white;
+    text-decoration: none;
+    padding-right: 1em;
+}
