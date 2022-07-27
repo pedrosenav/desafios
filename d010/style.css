@@ -130,7 +130,13 @@ b{
     color: var(--android-dark);
 }
 
-ul{
-    width: max-content;
-    background-color: pink;
+img{
+    margin: auto;
+}
+
+article{
+    background-color: var(--android-dark);
+    padding: 1em;
+    margin: auto;
+    margin-bottom: 1em;
 }
