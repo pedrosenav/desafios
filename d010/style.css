@@ -40,7 +40,7 @@ div#title > h1{
     color: white;
 }
 
-#subtitle{
+#subtitle-header{
     text-align: center;
 }
 
@@ -63,8 +63,17 @@ nav{
 
 nav > a{
     color: white;
+    background-color: transparent;
     text-decoration: none;
-    padding-right: 1em;
+    padding: 0.6em;
+    text-shadow: none;
+}
+
+nav > a:hover{
+    background-color: var(--android-light);
+    color: var(--android-dark);
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 nav > a::after{
@@ -74,7 +83,7 @@ nav > a::after{
 main{
     background-color: white;
     margin: auto;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     border-radius: 0px 0px 10px 10px;
     padding: 1em;
     width: 90%;
@@ -85,13 +94,8 @@ p{
     text-indent: 1em;
 }
 
-footer{
-    background-color: var(--android-dark);
-    color: white;
-    text-align: center;
-    font-size: small;
-    width: 100%;
-    padding: 0.5em;
+p > b{
+    color: var(--android-dark);
 }
 
 section{
@@ -104,34 +108,40 @@ section{
     background-color: var(--android-dark);
     color: white;
     font-weight: bold;
-    width: 100%;
-    /* padding no subtitlo */
+    width: 100% - 1em;
+    /* 1em = 16px */
+    padding: 1em;
+    border-radius: 5px 5px 0px 0px
+}
+
+ul{
+    display: inline;
 }
 
 li::before{
     content: '✔️ ';
 }
 
-a{
+p > a{
     font-weight: bold;
     color: var(--android-dark);
     text-decoration: none;
+    background-color: var(--android-light);
+    padding: 2px 4px;
 }
 
-a:hover{
+p > a:hover{
     text-decoration: underline;
 }
 
-a::after{
+p > a::after{
     content: ' 🔗';
-}
-
-b{
-    color: var(--android-dark);
 }
 
 img{
     margin: auto;
+    max-width: fit-content;
+    width: 100%;
 }
 
 article{
@@ -139,4 +149,23 @@ article{
     padding: 1em;
     margin: auto;
     margin-bottom: 1em;
+}
+
+footer{
+    background-color: var(--android-dark);
+    color: white;
+    text-align: center;
+    font-size: small;
+    width: 100%;
+    padding: 0.5em;
+}
+
+footer > a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+footer > a:hover{
+    text-decoration: underline;
 }
