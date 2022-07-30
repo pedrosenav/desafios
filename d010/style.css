@@ -8,15 +8,21 @@
     src: url('fontes/Mango Grotesque-VF.ttf') format('truetype');
 }
 
-*{
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root{
     --android-light: #84e1ad;
     --android-dark: #1A5C38;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
 }
 
 body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--android-light);
-    margin: 0px;
 }
 
 header{
@@ -24,29 +30,28 @@ header{
     padding: 1em;
     color: white;
     text-shadow: 1px 1px 3px var(--android-dark);
+    text-align: center;
 }
 
-div#title{
-    width: 400px;
-    margin: auto;
+header > p{
     text-align: center;
 }
 
 /* direct children */
-div#title > h1{
-    font-family: 'Mango Grotesque', 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+header > h1{
+    font-family: 'Bebas Neue', sans-serif;
     font-weight: 500;
     font-size: 3em;
     color: white;
 }
 
-#subtitle-header{
-    text-align: center;
-}
-
 h1,h2{
     font-family: 'idroid', 'Mango Grotesque',sans-serif;
     color: var(--android-dark);
+}
+
+h1{
+    font-size: 2em;
 }
 
 h2{
@@ -55,10 +60,11 @@ h2{
 }
 
 nav{
-    border-right: 10em;
-    margin-right: 2em;
+    background-color: var(--android-dark);
     font-size: 0.8em;
     font-weight: bold;
+    height: 2.5em;
+    padding-left: 0.5em;
 }
 
 nav > a{
@@ -67,6 +73,8 @@ nav > a{
     text-decoration: none;
     padding: 0.6em;
     text-shadow: none;
+    transition: ease-in-out;
+    transition-duration: 150ms;
 }
 
 nav > a:hover{
@@ -76,50 +84,48 @@ nav > a:hover{
     border-radius: 5px;
 }
 
-nav > a::after{
-    content: '';
-}
-
 main{
     background-color: white;
-    margin: auto;
-    margin-bottom: 2em;
+    min-width: 300px;
+    max-width: 1000px;
     border-radius: 0px 0px 10px 10px;
     padding: 1em;
-    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
 p{
     text-align: justify;
     text-indent: 1em;
+    line-height: 1.5em;
+    margin: 1em 0em 1em 0em;
 }
 
-p > b{
+p > strong{
     color: var(--android-dark);
 }
 
-section{
+aside{
     background-color: #c5ebd6;
     border-radius: 10px;
     padding: 0.5em;
 }
 
-#versions-title{
+h3{
     background-color: var(--android-dark);
     color: white;
     font-weight: bold;
-    width: 100% - 1em;
     /* 1em = 16px */
     padding: 1em;
     border-radius: 5px 5px 0px 0px
 }
 
 ul{
-    display: inline;
-}
-
-li::before{
-    content: '✔️ ';
+    list-style-type: '\2714\0020\0020';
+    list-style-position: inside;
+    columns: 2;
+    margin: 10px;
 }
 
 p > a{
@@ -140,15 +146,32 @@ p > a::after{
 
 img{
     margin: auto;
-    max-width: fit-content;
     width: 100%;
+    display: block;
 }
 
-article{
+.small-img{
+    width: 50%;
+}
+
+abbr{
+    text-decoration: none;
+}
+
+div.video{
+    position: relative;
     background-color: var(--android-dark);
-    padding: 1em;
-    margin: auto;
-    margin-bottom: 1em;
+    height: 0px;
+    margin: 0px -1em 15px -1em;
+    padding-bottom: 59%;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
 }
 
 footer{
