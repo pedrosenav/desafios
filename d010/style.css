@@ -11,7 +11,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root{
+    --android-pale: #c5ebd6;
     --android-light: #84e1ad;
+    --android-normal: #33d67c;
     --android-dark: #1A5C38;
 }
 
@@ -26,15 +28,19 @@ body{
 }
 
 header{
-    background-image: linear-gradient(to top, var(--android-dark), var(--android-light));
+    background-image: linear-gradient(to top, var(--android-dark), var(--android-normal));
     padding: 1em;
     color: white;
     text-shadow: 1px 1px 3px var(--android-dark);
     text-align: center;
+    min-height: 150px;
 }
 
 header > p{
     text-align: center;
+    font-size: 1.2em;
+    max-width: 480px;
+    margin: auto;
 }
 
 /* direct children */
@@ -50,12 +56,12 @@ h1,h2{
     color: var(--android-dark);
 }
 
-h1{
+main h1{
     font-size: 2em;
 }
 
-h2{
-    background-image: linear-gradient(to right, var(--android-light), rgba(255, 255, 255, 0));
+main h2{
+    background-image: linear-gradient(to right, var(--android-light), transparent);
     padding-left: 0.3em;
 }
 
@@ -65,14 +71,14 @@ nav{
     font-weight: bold;
     height: 2.5em;
     padding-left: 0.5em;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 nav > a{
     color: white;
-    background-color: transparent;
     text-decoration: none;
-    padding: 0.6em;
     text-shadow: none;
+    padding: 10px;
     transition: ease-in-out;
     transition-duration: 150ms;
 }
@@ -95,63 +101,72 @@ main{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
-p{
+main p{
     text-align: justify;
     text-indent: 1em;
     line-height: 1.5em;
-    margin: 1em 0em 1em 0em;
+    margin: 1em 0em;
 }
 
-p > strong{
+main strong{
     color: var(--android-dark);
+    font-weight: bold;
 }
 
 aside{
-    background-color: #c5ebd6;
+    background-color: var(--android-pale);
     border-radius: 10px;
-    padding: 0.5em;
+    padding: 16px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
-h3{
+aside > h3{
     background-color: var(--android-dark);
     color: white;
     font-weight: bold;
     /* 1em = 16px */
-    padding: 1em;
+    padding: 10px;
+    margin: -16px -16px 0px -16px;
     border-radius: 5px 5px 0px 0px
 }
 
-ul{
+aside > ul{
+    /* Não é compatível com todos os navegadores!! */
     list-style-type: '\2714\0020\0020';
     list-style-position: inside;
     columns: 2;
     margin: 10px;
 }
 
-p > a{
+a.externo{
     font-weight: bold;
     color: var(--android-dark);
     text-decoration: none;
     background-color: var(--android-light);
-    padding: 2px 4px;
+    padding: 2px 5px;
 }
 
-p > a:hover{
+a.externo:hover{
     text-decoration: underline;
 }
 
-p > a::after{
-    content: ' 🔗';
+a.externo::after{
+    /* \00A0 = código para espaço */
+    content: '\00A0\1F517';
 }
 
 img{
-    margin: auto;
     width: 100%;
-    display: block;
 }
 
 .small-img{
-    width: 50%;
+    max-width: 300px;
+    margin: auto;
+    display: block;
+    /* transforma a imagem em 
+     * block-level para poder
+     * alinhar com o margin auto
+     */
 }
 
 abbr{
@@ -172,23 +187,23 @@ div.video > iframe{
     left: 5%;
     width: 90%;
     height: 90%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
 }
 
 footer{
     background-color: var(--android-dark);
     color: white;
     text-align: center;
-    font-size: small;
-    width: 100%;
+    font-size: 0.8em;
     padding: 0.5em;
 }
 
-footer > a{
+footer a{
     color: white;
     text-decoration: none;
     font-weight: bolder;
 }
 
-footer > a:hover{
+footer a:hover{
     text-decoration: underline;
 }
