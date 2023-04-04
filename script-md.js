@@ -11,7 +11,7 @@ fs.writeFile(readme_file, header, (err) => {
 })
 
 const addLink = (file, i, path) => {
-	fs.appendFileSync(path, `\n[Desafio ${i}](./${file})`, (err) => {
+	fs.appendFileSync(path, `\n- [Desafio ${i}](./${file})`, (err) => {
 		if (err) console.log(err)
 	})
 }
