@@ -6,6 +6,7 @@ const readme_file = __dirname + '/README.md'
 
 const header = `# Desafios HTML e CSS\nMinhas soluções de desafios do curso de HTML5 e CSS3 do @cursoemvideo\n`
 
+// Escreve a header do README
 fs.writeFile(readme_file, header, (err) => {
 	if (err) console.log(err)
 })
@@ -22,6 +23,7 @@ const readREADME = (path) => {
 	})
 }
 
+// Escreve cada desafio com seu link
 readREADME(desafios_dir)
 	.then((files) => {
 		return files.filter((file) => /d\d{3}/.test(file))

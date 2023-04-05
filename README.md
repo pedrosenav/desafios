@@ -11,3 +11,5 @@ Minhas soluções de desafios do curso de HTML5 e CSS3 do @cursoemvideo
 - [Desafio 8](./d008)
 - [Desafio 9](./d009)
 - [Desafio 10](./d010)
+- [Desafio 11](./d011)
+- [Desafio 12](./d012)
